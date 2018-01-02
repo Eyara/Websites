@@ -1,0 +1,66 @@
+<html> 
+    <head>
+        <title>DEDD Company</title>
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Josefin Slab">
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato">
+        <link rel="stylesheet" type="text/css" href="default.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="header">
+            <div class="nav-bar">
+                <a class="company"> DEDD </a>
+                <div class="nav-bar-sub">
+                    <a> Services </a>
+                    <a> Portfolio </a>
+                    <a> Contacts </a>
+                </div>
+            </div>
+            <div class="main">
+                <div class="main-text">
+                    THE <span class="blue-text"> NEW </span>
+                    <br>
+                    GENERATION 
+                    <br>
+                    THINK ARE VERY <span class="blue-text"> CREATIVE! </span>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="services">
+                <p class="text-wh"> What we do </p>
+                <div class="services-container">
+                    <div class="web">
+                        <p class="services-title"> Web Development </p>
+                        <ul class="web-list">
+                            <li> Landings </li>
+                            <li> Shopping sites </li>
+                            <li> Web applications </li>
+                            <li> Digital Marketing </li>
+                        </ul>
+                    </div>
+                    <div class="mobile">
+                        <p class="services-title"> Mobile Development </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+        </div>
+    
+        <script>
+            $(".nav-bar-sub a").hover(function() {
+                $(this).animate({
+                    "border-bottom-width": "0.2vw"
+                }, 200)
+                $(this).css({"color":"#3b7eed"});
+            }, function() {
+                $(this).stop().animate({
+                    "border-bottom-width": "0vw",
+                    "border-color" : ""
+                }, 200);
+                $(this).css({"color":"#7c777c"});
+            });
+        </script>
+    </body>
+</html>
