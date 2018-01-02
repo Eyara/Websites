@@ -65,29 +65,38 @@ body {
 
 .services-container {
     width: 90%;
+    height: 120%;
     margin-left: 5%;
+    color: #666970;
+}
+
+.services-title {
+    font-family: "Verdana", serif;
+    margin-left: 20%;
+    font-size: 5vw;
+}
+
+.services-thesis {
+    float: left;
+    font-family: "Verdana", serif;
+    margin-left: 20%;
+    width: 30%;
+    font-size: 2.5vw;
 }
 
 .web {
     float: left;
-    width: 40%;
-    margin-left: 6%;
-    height: 95%;
-}
-
-.mobile {
-    float: left;
-    width: 40%;
-    margin-left: 6%;
-    height: 95%;
-}
-
-.services-title {
-    text-align: center;
-    font-size: 3vw;
+    width: 90%;
 }
 
 .web-list {
+    float: left;
+    width: 30%;
+    margin-top: 3%;
     margin-left: 10%;
     font-size: 1.5vw;
+}
+
+.web-list li {
+    list-style-type: square;
 }
