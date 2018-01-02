@@ -32,16 +32,38 @@
                 <div class="services-container">
                     <div class="web">
                         <p class="services-title"> Web Development </p>
-                        <ul class="web-list">
-                            <li> Landings </li>
-                            <li> Shopping sites </li>
-                            <li> Web applications </li>
-                            <li> Digital Marketing </li>
-                        </ul>
+                        <p class="services-thesis"> 
+                            The most powerful tool to  speak to the world.
+                        </p>
+                        <div class="web-list">
+                            There are 7 billion people in the world, and by 
+                            2020 4.1 billion of them will be connected to the  internet. <br><br>
+                            Online is no longer an alternative realm, it is the
+                            realm.
+                            Own your own piece of this future, let 
+                            Yoke help plan, design, develop and launch your
+                            next website, web app or digital service. <br> <br>
+                            Take a look through the projects below, or
+                            get in touch to find out more. <br>
+                            <ul>
+                                <li> Landings </li>
+                                <li> Shopping sites </li>
+                                <li> Web applications </li>
+                                <li> Digital Marketing </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="mobile">
-                        <p class="services-title"> Mobile Development </p>
-                    </div>
+                </div>
+            </div>
+            <div class="portfolio"> 
+                <p class="text-wh"> What we've done </p>
+                <div class="slider">
+                    <img class="mySlides" src="img/back.png" style="width:100%">
+                    <img class="mySlides" src="img/back.png" style="width:100%">
+                    <img class="mySlides" src="img/back.png" style="width:100%">
+                    <img class="mySlides" src="img/back.png" style="width:100%">
+                    <button class="button display-left" onclick="plusDivs(-1)">&#10094;</button>
+                    <button class="button display-right" onclick="plusDivs(+1)">&#10095;</button>
                 </div>
             </div>
         </div>
@@ -61,6 +83,25 @@
                 }, 200);
                 $(this).css({"color":"#7c777c"});
             });
+        </script>
+        <script>
+            var slideIndex = 1;
+            showDivs(slideIndex);
+
+            function plusDivs(n) {
+                showDivs(slideIndex += n);
+            }
+
+            function showDivs(n) {
+                var i;
+                var x = document.getElementsByClassName("mySlides");
+                if (n > x.length) {slideIndex = 1} 
+                if (n < 1) {slideIndex = x.length} ;
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none"; 
+                }
+                x[slideIndex-1].style.display = "block"; 
+            }
         </script>
     </body>
 </html>
