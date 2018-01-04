@@ -3,9 +3,9 @@
         <title>DEDD Company</title>
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Josefin Slab">
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato">
-        <link rel="stylesheet" type="text/css" href="default.css">
+        <link rel="stylesheet" type="text/css" href="default.css">   
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    </hea
+    </head>
     <body>
         <div class="header">
             <div class="nav-bar">
@@ -26,12 +26,15 @@
                 </div>
             </div>
         </div>
-        <div class="content">
+        <div class="content ">
             <div class="services">
                 <p class="text-wh"> What we do </p>
-                <div class="services-container">
+                <div class="services-container hide">
                     <div class="web">
+                       <!--
+                        
                         <p class="services-title"> Web Development </p>
+                        -->
                         <p class="services-thesis"> 
                             The most powerful tool to  speak to the world.
                         </p>
@@ -57,25 +60,86 @@
             </div>
             <div class="portfolio"> 
                 <p class="text-wh"> What we've done </p>
-                <div class="slider">
-                    <img class="mySlides" src="img/back.png" style="width:100%">
-                    <img class="mySlides" src="img/back.png" style="width:100%">
-                    <img class="mySlides" src="img/back.png" style="width:100%">
-                    <img class="mySlides" src="img/back.png" style="width:100%">
-                    <button class="button display-left" onclick="plusDivs(-1)">&#10094;</button>
-                    <button class="button display-right" onclick="plusDivs(+1)">&#10095;</button>
+                <div class="slideshow-container hide">
+                  <div class="mySlides fade">
+                      <img src="img/Portfolio-one.png" style="width:80%; padding-left: 10%">
+                      <div class="text">Сайт Дмитрия Воробьёва </div>
+                  </div>
+
+                  <div class="mySlides fade">
+                      <img src="img/Portfolio-two.png" style="width:80%; padding-left: 10%">
+                      <div class="text" style="color: #7c777c;">DayPlanner</div>
+                  </div>
+                  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <br>
+
+                <div style="text-align:center">
+                  <span class="dot" onclick="currentSlide(1)"></span> 
+                  <span class="dot" onclick="currentSlide(2)"></span>
                 </div>
             </div>
         </div>
-        <div class="footer">
+        <div class="contacts">
+            <div class="contacts-title">
+                <div class="contacts-text">
+                    <div class="contacts-main-text">
+                        Partner with an Dynamic & Reliable Studio
+                    </div>
+                    <div class="contacts-sub-text">
+                        Enter your details & we'll be touch to discuss your project
+                    </div>
+                </div>
+            </div>
+            <div class="contacts-send">
+                <input type="text" placeholder="Full Name">
+                <input type="email" placeholder="Email">
+                <input type="text" placeholder="Contact No.">
+                <input type="text" placeholder="How can we help?">
+                <input id="contacts-send-button" type="submit" value="Request callback">
+            </div>
         </div>
-    
+        <div class="footer">
+            <div class="team">
+                <p class="team-title"> Our team </p>
+                <p> Drus </p>
+                <p> Eugene </p>
+                <p> Dimas </p>
+            </div>
+            <div class="address">
+                <p class="city"> Tula </p>
+                <p> 150 Fayetteville St # 450, Raleigh, NC 27601</p>
+            </div>
+        </div>
+        
+        <script>
+            $(document).ready(function() {
+                $(".main-text").fadeIn(2500);
+                $(".blue-text").fadeOut(0);
+                $(".blue-text").fadeIn(2500);
+            });
+            $(document).scroll(function () {
+                $(".hide").each(function() {
+                    var y = $(document).scrollTop();
+                    var t = $(this).parent().offset().top;
+                    if (y >= t - 400) {
+                        $(this).fadeIn(1500);
+                    }
+                    else {
+                        $(this).fadeOut(200);
+                    }        
+                });
+            });
+        </script>
+        
         <script>
             $(".nav-bar-sub a").hover(function() {
                 $(this).animate({
                     "border-bottom-width": "0.2vw"
                 }, 200)
                 $(this).css({"color":"#3b7eed"});
+                $(this).css({"transition": "color 0.4s ease"});
             }, function() {
                 $(this).stop().animate({
                     "border-bottom-width": "0vw",
@@ -86,21 +150,30 @@
         </script>
         <script>
             var slideIndex = 1;
-            showDivs(slideIndex);
+            showSlides(slideIndex);
 
-            function plusDivs(n) {
-                showDivs(slideIndex += n);
+            function plusSlides(n) {
+              showSlides(slideIndex += n);
             }
 
-            function showDivs(n) {
+            function currentSlide(n) {
+              showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
                 var i;
-                var x = document.getElementsByClassName("mySlides");
-                if (n > x.length) {slideIndex = 1} 
-                if (n < 1) {slideIndex = x.length} ;
-                for (i = 0; i < x.length; i++) {
-                    x[i].style.display = "none"; 
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("dot");
+                if (n > slides.length) {slideIndex = 1} 
+                if (n < 1) {slideIndex = slides.length}
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none"; 
                 }
-                x[slideIndex-1].style.display = "block"; 
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex-1].style.display = "block"; 
+                dots[slideIndex-1].className += " active";
             }
         </script>
     </body>

@@ -46,6 +46,7 @@ body {
 
 .main-text {
     float: left;
+    display: none;
     position: absolute;
     margin-left: 12%;
     margin-top: 12%;
@@ -62,10 +63,12 @@ body {
     color: #55575b;
 }
 
+.services {
+    height: 85%;
+}
 
 .services-container {
     width: 90%;
-    height: 120%;
     margin-left: 5%;
     color: #666970;
 }
@@ -99,4 +102,175 @@ body {
 
 .web-list li {
     list-style-type: square;
+}
+
+.portfolio {
+    height: 100%;
+}
+
+.slideshow-container {
+    width: 70%;
+    position: relative;
+    margin-left: 15%;
+}
+
+.mySlides {
+    display: none;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    background-color: #7c777c;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+}
+
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+
+.prev:hover, .next:hover {
+    background-color: black;
+}
+
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+.dot {
+    cursor:pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+.contacts {
+    background: linear-gradient(to bottom, #6e9cb7, #3e4568);
+    height: 80%;
+}
+
+.contacts-text {
+    float: left;
+    width: 40%;
+    padding: 7.5%;
+}
+
+.contacts-main-text {
+    color: #f5f4f7;
+    font-size: 2.8vw;
+    font-family: "Verdana", cursive;
+    font-weight: bold;
+}
+
+.contacts-sub-text {
+    color: #f5f4f7;
+    font-family: "Verdana", cursive;
+    padding-top: 1%;
+    font-size: 1.35vw;
+}
+
+.contacts-send {
+    float: left;
+    padding-top: 7.5%;
+    margin-left: 2%;
+    width: 25%;
+}
+
+.contacts-send input {
+    width: 120%;
+    border: 0;
+    border-radius: 3px;
+    height: 10%;
+    margin-bottom: 2.5%;
+    font-size: 1.5vw;
+    color: #686868;
+    padding-left: 5%;
+}
+
+input::placeholder {
+    color: #999499;
+}
+
+#contacts-send-button {
+    width: 60%;
+    height: 12.5%;
+    margin-top: 2.5%;
+    background-color: #000419;
+    color: #f5f4f7;
+    border-radius: 10px;
+    padding-right: 5%;
+}
+
+.footer {
+    background-color: #000419;
+    height: 60%;
+    line-height: 3vw;
+}
+
+.team {
+    float: left;
+    margin-left: 10%;
+    color: #f5f4f7;
+    font-size: 2.25vw;
+}
+
+.team-title {
+    font-size: 2.75vw;
+    margin-left: -15%;
+}
+
+.address {
+    float: left;
+    margin-top: 1%;
+    margin-left: 35%;
+    width: 15%;
+    font-size: 1.5vw;
+    color: #7c777c;
+}
+
+.city {
+    color: #f5f4f7;
+    font-size: 2vw;
 }
