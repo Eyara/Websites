@@ -11,9 +11,9 @@
             <div class="nav-bar">
                 <a class="company"> DEDD </a>
                 <div class="nav-bar-sub">
-                    <a> Services </a>
-                    <a> Portfolio </a>
-                    <a> Contacts </a>
+                    <a id="nav-bar-serv"> Services </a>
+                    <a id="nav-bar-portfolio"> Portfolio </a>
+                    <a id="nav-bar-contacts"> Contacts </a>
                 </div>
             </div>
             <div class="main">
@@ -113,6 +113,23 @@
             </div>
         </div>
         
+        <script>
+            $("#nav-bar-serv").click(function() {
+                $('html, body').animate({
+                    scrollTop: $(".services").offset().top
+                }, 2000);
+            });
+            $("#nav-bar-portfolio").click(function() {
+                $('html, body').animate({
+                    scrollTop: $(".portfolio").offset().top
+                }, 2000);
+            });
+            $("#nav-bar-contacts").click(function() {
+                $('html, body').animate({
+                    scrollTop: $(".contacts").offset().top
+                }, 2000);
+            });
+        </script>
         <script>
             $(document).ready(function() {
                 $(".main-text").fadeIn(2500);

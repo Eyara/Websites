@@ -243,6 +243,11 @@ input::placeholder {
     padding-right: 5%;
 }
 
+#contacts-send-button:hover {
+    color: #7c777c;
+    background-color: #050c33;
+}
+
 .footer {
     background-color: #000419;
     height: 60%;
